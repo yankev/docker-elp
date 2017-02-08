@@ -16,7 +16,7 @@ services:
 
     links:
       - postgres
-
+      - es
   es:
     image: elasticsearch
     expose:
