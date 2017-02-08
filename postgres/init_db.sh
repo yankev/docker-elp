@@ -7,6 +7,8 @@
 # su postgres -c '/usr/lib/postgresql/9.5/bin/pg_ctl -D /var/lib/postgresql/data/ start -l /var/lib/postgresql/logfile'
 
 # bootstrap the database with a snapshot
-su postgres -c "psql -U postgres < /var/initdb_scripts/init.sql";
+
+
+# su postgres -c "psql -U postgres postgres < /var/initdb_scripts/init.sql";
 
 
