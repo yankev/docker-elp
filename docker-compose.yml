@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  logstash :
+    build:
+      context: ./logstash
+    volumes:
+      - ./logstash/config:/config-dir
+    # command: logstash -f /config-dir/logstash.conf
+    depends_on:
+      - postgres
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+
+    links:
+      - postgres
+  #     - es
+
+  # es:
+  #   image: elasticsearch
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+
+  postgres:
+    build:
+      context: ./postgres
+    # image: postgres:alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+    expose:
+      - "5432"
