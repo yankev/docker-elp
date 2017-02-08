@@ -19,9 +19,12 @@ services:
       - es
   es:
     image: elasticsearch
-    expose:
-      - "9200"
-      - "9300"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    # expose:
+    #   - "9200"
+    #   - "9300"
 
   postgres:
     build:
