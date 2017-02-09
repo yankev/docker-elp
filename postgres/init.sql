@@ -1,5 +1,5 @@
 create table contacts (
-    uid serial,
+    uid serial primary key,
     email VARCHAR(80) not null,
     first_name VARCHAR(80) NOT NULL,
     last_name VARCHAR(80) NOT NULL
