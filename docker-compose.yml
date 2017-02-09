@@ -22,9 +22,6 @@ services:
     links:
       - postgres
       - es
-    # expose:
-    #   - "9200"
-    #   - "9300"
 
   postgres:
     build:
